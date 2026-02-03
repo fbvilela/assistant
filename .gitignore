@@ -1,0 +1,47 @@
+# Local AI tool configs (machine-specific)
+.agents/
+.augment/
+.codex/
+.cursor/
+.opencode/
+
+# User personal data (created by /setup)
+.assistant/profile.md
+.assistant/preferences.md
+.assistant/integrations.md
+.assistant/state.md
+
+# PARA folders — structure is tracked via .gitkeep, content is personal
+00-Inbox/*
+!00-Inbox/.gitkeep
+00-Inbox/Daily/*
+!00-Inbox/Daily/.gitkeep
+00-Inbox/Fleeting-Notes/*
+!00-Inbox/Fleeting-Notes/.gitkeep
+
+01-Projects/*
+!01-Projects/.gitkeep
+
+02-Areas/*
+!02-Areas/.gitkeep
+!02-Areas/Relationships/
+02-Areas/Relationships/*
+!02-Areas/Relationships/.gitkeep
+
+03-Resources/*
+!03-Resources/.gitkeep
+!03-Resources/Reference-Notes/
+03-Resources/Reference-Notes/*
+!03-Resources/Reference-Notes/.gitkeep
+
+04-Archives/*
+!04-Archives/.gitkeep
+
+Daily Plans/*
+!Daily Plans/.gitkeep
+
+Permanent Notes/*
+!Permanent Notes/.gitkeep
+
+Meeting Notes/*
+!Meeting Notes/.gitkeep
