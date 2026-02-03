@@ -1,29 +1,68 @@
 # Personal Assistant
 
-A personal assistant powered by Claude Code. Manages your day, tasks, emails, and mental load.
+An AI-powered personal assistant that helps you manage your day, tasks, communications, and mental load. Built on [Claude Code](https://github.com/anthropics/claude-code), it uses a skill-based architecture where each capability is a modular, teachable skill.
 
-## Prerequisites
+## What It Does
 
-1. **Mac** (macOS)
-2. **Node.js** — Download from https://nodejs.org (LTS version)
-3. **Claude Code** — Install with: `npm install -g @anthropic-ai/claude-code`
-4. **Anthropic API key** — Get one from https://console.anthropic.com
-5. **Obsidian** (recommended) — Download from https://obsidian.md — free note viewer for browsing your tasks, projects, and notes visually. After setup, open this folder as an Obsidian vault.
+- **Morning briefings** — Start your day with a plan
+- **GTD + PARA + Zettelkasten** — Full second brain with inbox processing, project management, and permanent notes
+- **ADHD-friendly** — Overwhelm handlers, gentle check-ins, task breakdowns
+- **Quick capture** — Grab thoughts without context-switching
+- **Daily/weekly planning & reviews** — Stay on track
+- **Email/message drafting** — Helps you communicate clearly
+- **Extensible** — Find and install new skills as you need them
+
+All your data stays local on your machine.
 
 ## Setup
 
+### Already have Claude Code?
+
+If you have Claude Code set up with an Anthropic API key or subscription:
+
 ```bash
-# 1. Set your API key (add to ~/.zshrc to persist)
-export ANTHROPIC_API_KEY="your-key-here"
-
-# 2. Navigate to this folder
-cd ~/personal-assistant
-
-# 3. Launch
+cd /path/to/personal-assistant
 claude
 ```
 
-The assistant will walk you through a setup wizard on first launch.
+That's it. The assistant will walk you through a setup wizard on first launch.
+
+---
+
+### Budget Setup: Run It for (Almost) Free
+
+You can run this assistant using **Ollama** with the **Kimi K2.5** model on Ollama's cloud infrastructure — no expensive hardware or complex configuration needed.
+
+#### Step 1: Install Claude Code
+
+```bash
+curl -fsSL https://claude.ai/install.sh | sh
+```
+
+#### Step 2: Install Ollama
+
+Download from [ollama.com](https://ollama.com)
+
+#### Step 3: Pull the Model
+
+```bash
+ollama pull kimi-k2.5:cloud
+```
+
+#### Step 4: Launch
+
+```bash
+cd /path/to/personal-assistant
+ollama launch claude --model kimi-k2.5:cloud
+```
+
+#### Notes
+
+- **kimi-k2.5:cloud** runs on Ollama's servers — fast inference without needing a powerful GPU
+- **Free tier limits**: Ollama's free tier may limit your initial setup (which involves more conversation as the assistant learns about you), but should be plenty for daily use once everything is in place
+- **Fully local option**: Use `kimi-k2.5` (without `:cloud`) if you have 32GB+ RAM and want everything on your machine
+
+---
 
 ## Daily Usage
 
@@ -45,14 +84,7 @@ Then just type `pa` to start your assistant.
 | Command | Alias | What it does |
 |---------|-------|-------------|
 | `/good-morning` | `/gm` | Morning briefing and daily planning |
-| `/plan` | `/p` | Plan or replan the day |
-| `/whats-next` | `/next` | What should I focus on? |
-| `/end-of-day` | `/eod` | Wrap up and reflect |
 | `/checkin` | `/ci` | Progress check-in |
-| `/capture <text>` | `/c` | Quick capture a thought |
-| `/tasks` | `/t` | Show today's tasks |
-| `/inbox` | `/in` | Process captured items |
-| `/done` | `/d` | Mark a task complete |
 | `/stuck` | | Help when overwhelmed |
 | `/draft` | | Draft an email or message |
 | `/polish` | | Improve existing text |
@@ -95,3 +127,7 @@ The assistant can also update and repair itself:
 /update    — check for skill updates
 /heal      — fix broken skills or missing files
 ```
+
+## Recommended
+
+- **[Obsidian](https://obsidian.md)** (free) — Open this folder as an Obsidian vault to browse your tasks, projects, and notes visually
